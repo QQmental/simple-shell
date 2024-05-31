@@ -388,7 +388,7 @@ static bool Parse_cmd(const std::string &str, std::deque<Token> *dst)
 /*     for(auto &item : std::as_const(token_list))
         std::cout << item.data << ":[" << item.start << ":" << item.end << "]  type:" << int(item.type) << "\n"; */
     
-    *dst = token_list;
+    *dst = std::move(token_list);
     return true;
 }
 
